@@ -1,4 +1,5 @@
 package db;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -13,9 +14,10 @@ public class DBConnection {
 	private static final String driverClass = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
 	private static final String dbName = "dmaa0920_1086252";
 	private static final String serverAddress = "hildur.ucn.dk";
+	//private static final String serverAddress = "192.168.56.2";
 	private static final int    serverPort = 1433;
-	private static final String userName = "sa";
-	private static final String password = "Secret01";
+	private static final String userName = "dmaa0920_1086252";
+	private static final String password = "Password1!";
 	
 	private DBConnection() {
 		String connectionString = String.format("jdbc:sqlserver://%s:%d;databaseName=%s;user=%s;password=%s", 
@@ -39,6 +41,7 @@ public class DBConnection {
 		}
 		return dbConnection;
 	}
+	
 	public void startTransaction() throws SQLException {
 		connection.setAutoCommit(false);
 	}
@@ -112,6 +115,4 @@ public class DBConnection {
 			e.printStackTrace();
 		}
 	}
-	
 }
-
