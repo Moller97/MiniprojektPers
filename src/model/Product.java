@@ -6,17 +6,19 @@ private int purchasePrice;
 private int salesPrice;
 private int rentPrice;
 private String countryOfOrigin;
-private int stockStorage;
+private int stockCar;
+private int stockStore;
 private int productNo;
 private int stockAmount;
 private String storageName;  
 
-public Product(String productName, int purchasePrice, int salesPrice, int rentPrice, String countryOfOrigin, int stockStorage, int productNo, int stockAmount, String storageName) {
+public Product(String productName, int purchasePrice, int salesPrice, int rentPrice, String countryOfOrigin, int stockCar, int stockStore, int productNo, int stockAmount, String storageName) {
 this.productName = productName;
 this.purchasePrice = purchasePrice;
 this.rentPrice = rentPrice;
 this.countryOfOrigin = countryOfOrigin;
-this.stockStorage = stockStorage;
+this.stockCar = stockCar;
+this.stockStore = stockStore;
 this.productNo = productNo;
 this.stockAmount = stockAmount;
 this.storageName = storageName;
@@ -64,12 +66,20 @@ public void setCountryOfOrigin(String countryOfOrigin) {
 
 }
 
-public int getStockStorage() {
-	return stockStorage;
+public int getStockCar() {
+	return stockCar;
 }
 
-public void setStockStorage(int stockStorage) {
-	this.stockStorage = stockStorage;
+public void setStockCar(int stockCar) {
+	this.stockCar = stockCar;
+}
+
+public int getStockStore() {
+	return stockStore;
+}
+
+public void setStockStore(int stockStore) {
+	this.stockStore = stockStore;
 }
 
 public int getProductNo() {
@@ -97,7 +107,7 @@ public void setStorageName(String storageName) {
 }
 
 public String printProduct() {
-	return "\nProdukt navn: " + getProductName() + "\nKøbspris " + getPurchasePrice() + "\nSlagspris " + getSalesPrice() + "\nLejepris" + getRentPrice() + "\nOprindelsesland: " + getCountryOfOrigin() + "\nAntal tøj på dette lager: " + getStorageName() + getStockStorage() + "\nProduktNummer: " + getProductNo() + "\nAntal af tøj i alt: " + getStockAmount();
+	return "\nProdukt navn: " + getProductName() + "\nKøbspris " + getPurchasePrice() + "\nSlagspris " + getSalesPrice() + "\nLejepris" + getRentPrice() + "\nOprindelsesland: " + getCountryOfOrigin() + "\nAntal i bil: " + getStorageName() + getStockCar() + "\nAntal i butik: " + getStorageName() + getStockStore() + "\nProduktNummer: " + getProductNo() + "\nAntal i alt: " + getStockAmount();
 
 }
 
