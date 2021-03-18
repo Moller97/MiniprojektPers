@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 
 public class CustomerMenu {
 
-	private JFrame frame;
+     JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -36,7 +36,8 @@ public class CustomerMenu {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setTitle("KundeMenu");
+		frame.setBounds(100, 100, 630, 410);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
