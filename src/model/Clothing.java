@@ -4,8 +4,8 @@ public class Clothing extends Product {
 private String size;
 private String colour;
 
-public Clothing(String productName, int purchasePrice, int salesPrice, int rentPrice, String countryOfOrigin, int stockStorage, int productNo, int stockAmount, String storageName, String size, String colour) {
-super(productName, purchasePrice, salesPrice, rentPrice, countryOfOrigin, stockStorage, productNo, stockAmount, storageName);
+public Clothing(String productName, int purchasePrice, int salesPrice, int rentPrice, String countryOfOrigin, int stockStore, int productNo, int stockAmount, String storageName, String size, String colour) {
+super(productName, purchasePrice, salesPrice, rentPrice, countryOfOrigin, stockStore, productNo, stockAmount, stockAmount, storageName);
 this.size = size;
 this.colour = colour;
 
@@ -28,7 +28,7 @@ public void setColour(String colour) {
 }
 
 public String printProductClothing() {
-	return "\nProdukt navn: " + getProductName() + "\nKøbspris " + getPurchasePrice() + "\nSlagspris " + getSalesPrice() + "\nLejepris" + getRentPrice() + "\nOprindelsesland: " + getCountryOfOrigin() + "\nAntal tøj på dette lager: " + getStorageName() + getStockStorage() + "\nProduktNummer: " + getProductNo() + "\nAntal af tøj i alt: " + getStockAmount() + "\nStørrelse: " + getSize() + "\nFarve: " + getColour();
+	return "\nProdukt navn: " + getProductName() + "\nKøbspris " + getPurchasePrice() + "\nSlagspris " + getSalesPrice() + "\nLejepris" + getRentPrice() + "\nOprindelsesland: " + getCountryOfOrigin() + "\nAntal tøj på dette lager: " + getStorageName() + getStockStore() + "\nProduktNummer: " + getProductNo() + "\nAntal af tøj i alt: " + getStockAmount() + "\nStørrelse: " + getSize() + "\nFarve: " + getColour();
 
 }
 

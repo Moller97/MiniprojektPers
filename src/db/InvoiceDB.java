@@ -6,17 +6,18 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Supplier;
+import model.Invoice;
+import model.SaleOrder;
 
-public class SupplierDB implements SupplierDBIF {
+public class InvoiceDB implements InvoiceDBIF {
 	private static final String selectAllQ = 
-			"select id, phone,name, address, country, email description from groups";
+			"select invoiceNo, paymentDate, amount description from groups";
 	private static final String selectByIDQ = 
 			selectAllQ + " where id = ?";
 	private PreparedStatement selectAll; 
 	private PreparedStatement selectByID;
 	
-	public SupplierDB() throws SQLException {
+	public InvoiceDB() throws SQLException {
 		selectAll = DBConnection.getInstance().getConnection()
 				.prepareStatement(selectAllQ);
 		selectByID = DBConnection.getInstance().getConnection()
@@ -24,10 +25,10 @@ public class SupplierDB implements SupplierDBIF {
 	}
 	
 	@Override
-	public List<Supplier> findAll() throws DataAccessException  {
+	public List<Invoice> findAll() throws DataAccessException  {
 		try {
 			ResultSet rs = selectAll.executeQuery();
-			List<Supplier> res = buildObjects(rs);
+			List<Invoice> res = buildObjects(rs);
 			return res;
 		} catch (SQLException e) {
 			DataAccessException he = new DataAccessException(e, "Could not find all");
@@ -36,35 +37,32 @@ public class SupplierDB implements SupplierDBIF {
 	}
 
 	@Override
-	public Supplier findBySupplierId(int id) throws DataAccessException {
+	public Invoice findByInvoiceNo(int no) throws DataAccessException {
 		try {
-			selectByID.setInt(1, id);
+			selectByID.setInt(1, no);
 			ResultSet rs = selectByID.executeQuery();
-			Supplier s = null;
+			Invoice i = null;
 			if(rs.next()) {
-				s = buildObject(rs);
+				i = buildObject(rs);
 			}
-			return s;
+			return i;
 		} catch (SQLException e) {
-			throw new DataAccessException(e, "Could not find by id = " + id);
+			throw new DataAccessException(e, "Could not find by id = " + no);
 		}
 	}
 
-	private Supplier buildObject(ResultSet rs) throws SQLException {
-		Supplier s = new Supplier(
-				rs.getString("id"),
-				rs.getString("phone"),
-				rs.getString("name"),
-				rs.getString("address"),
-				rs.getString("country"),
-				rs.getString("email")
+	private Invoice buildObject(ResultSet rs) throws SQLException {
+		Invoice i = new Invoice(
+				rs.getString("invoiceNo"),
+				rs.getInt("amount"),
+				((SaleOrder) rs)
 				
 				);
-		return s;
+		return i;
 	}
 
-	private List<Supplier> buildObjects(ResultSet rs) throws SQLException {
-		List<Supplier> res = new ArrayList<>();
+	private List<Invoice> buildObjects(ResultSet rs) throws SQLException {
+		List<Invoice> res = new ArrayList<>();
 		while(rs.next()) {
 			res.add(buildObject(rs));
 		}
