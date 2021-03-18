@@ -30,8 +30,8 @@ public class SaleOrder {
 
 		
 
-	public int getCustomerNo(){
-		return customerNo;
+	public int getCustomerId(){
+		return customerId;
 	}
 	
 	public int getInvoiceNo(){

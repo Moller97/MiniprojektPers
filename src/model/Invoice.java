@@ -13,7 +13,7 @@ public class Invoice {
 	
 	private SaleOrder saleOrder;
 	
-	public Invoice(int invoiceNo, int amount, SaleOrder saleOrder ) {
+	public Invoice(String invoiceNo, int amount, SaleOrder saleOrder ) {
 		this.invoiceNo = invoiceNo;
 		this.amount = amount;
 		this.saleOrder = saleOrder;
