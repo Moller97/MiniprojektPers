@@ -1,5 +1,4 @@
 package model;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -8,20 +7,28 @@ public class SaleOrder {
 
 	private int customerNo;
 	private int invoiceNo;
-	private int iD;
+	private int orderId;
 	private String deliveryStatus;
 	private String deliveryDate;
-	private ArrayList<Product> products;
+	//private ArrayList<Product> products
+	public SaleOrder(int customerNo, int invoiceNo, int orderId, String deliveryStatus, String deliveryDate) {
+	this.customerNo = customerNo;
+	this.invoiceNo = invoiceNo;
+	this.orderId = orderId;
+	this.deliveryStatus = deliveryStatus;
+	this.deliveryDate = deliveryDate;
+	
+	}
 	
 	Calendar c = new GregorianCalendar();
 	Date date = c.getTime();
 	
-	
-	
-	
 //	public int getID(){
 //		return iD;
 //	}
+
+
+		
 
 	public int getCustomerNo(){
 		return customerNo;
@@ -31,7 +38,7 @@ public class SaleOrder {
 		return invoiceNo;	
 	}
 	
-	public Calendar getDate(){
+	public Date getDate(){
 		return date;
 	}
 	
@@ -43,12 +50,11 @@ public class SaleOrder {
 		return deliveryDate;
 	}
 	
-	public void order(int iD) {
-		products = new ArrayList<>();
-		setID();
+	public int getOrderId() {
+		return orderId;
 		
 	}
 
-	
-	
 }
+	
+
