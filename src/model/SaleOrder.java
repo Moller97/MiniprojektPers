@@ -23,9 +23,7 @@ public class SaleOrder {
 	Calendar c = new GregorianCalendar();
 	Date date = c.getTime();
 	
-//	public int getID(){
-//		return iD;
-//	}
+
 
 
 		
