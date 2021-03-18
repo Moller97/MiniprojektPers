@@ -5,14 +5,14 @@ import java.util.GregorianCalendar;
 
 public class SaleOrder {
 
-	private int customerNo;
+	private int customerId;
 	private int invoiceNo;
 	private int orderId;
 	private String deliveryStatus;
 	private String deliveryDate;
 	//private ArrayList<Product> products
-	public SaleOrder(int customerNo, int invoiceNo, int orderId, String deliveryStatus, String deliveryDate) {
-	this.customerNo = customerNo;
+	public SaleOrder(int customerId, int invoiceNo, int orderId, String deliveryStatus, String deliveryDate) {
+	this.customerId = customerId;
 	this.invoiceNo = invoiceNo;
 	this.orderId = orderId;
 	this.deliveryStatus = deliveryStatus;

@@ -6,6 +6,7 @@ import java.util.List;
 import db.SaleOrderDB;
 import db.SaleOrderDBIF;
 import db.DataAccessException;
+import model.Invoice;
 import model.SaleOrder;
 
 public class SaleOrderCtr implements SaleOrderCtrIF {
@@ -28,5 +29,7 @@ public class SaleOrderCtr implements SaleOrderCtrIF {
 	public SaleOrder findById(int id) throws DataAccessException {
 		return SaleOrderDB.findByOrderId(id);
 	}
+
+	
 
 }
