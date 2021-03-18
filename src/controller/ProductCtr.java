@@ -15,7 +15,7 @@ public class ProductCtr implements ProductCtrIF {
 		try {
 			ProductDB = new ProductDB();
 		} catch (SQLException e) {
-			throw new DataAccessException(e, "Can't create CustomerDB");
+			throw new DataAccessException(e, "Can't create ProductDB");
 		}
 	}
 	

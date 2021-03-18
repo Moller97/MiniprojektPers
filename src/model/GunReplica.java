@@ -4,8 +4,8 @@ public class GunReplica extends Product {
 private String calibre;
 private String material;
 	
-public GunReplica(String productName, int purchasePrice, int salesPrice, int rentPrice, String countryOfOrigin, int stockStorage, int productNo, int stockAmount, String storageName, String calibre, String material) {
-super(productName, purchasePrice, salesPrice, rentPrice, countryOfOrigin, stockStorage, productNo, stockAmount, storageName);
+public GunReplica(String productName, int purchasePrice, int salesPrice, int rentPrice, String countryOfOrigin, int stockStore, int productNo, int stockAmount, String storageName, String calibre, String material) {
+super(productName, purchasePrice, salesPrice, rentPrice, countryOfOrigin, stockStore, productNo, stockAmount, stockAmount, storageName);
 this.calibre = calibre;
 this.material = material;
 
@@ -28,7 +28,7 @@ public void setMaterial(String material) {
 }
 
 public String printProductGunReplica() {
-	return "\nProdukt navn: " + getProductName() + "\nKøbspris " + getPurchasePrice() + "\nSlagspris " + getSalesPrice() + "\nLejepris" + getRentPrice() + "\nOprindelsesland: " + getCountryOfOrigin() + "\nAntal tøj på dette lager: " + getStorageName() + getStockStorage() + "\nProduktNummer: " + getProductNo() + "\nAntal af tøj i alt: " + getStockAmount() + "\nKlaiber: " + getCalibre() + "\nMateriale: " + getMaterial();
+	return "\nProdukt navn: " + getProductName() + "\nKøbspris " + getPurchasePrice() + "\nSlagspris " + getSalesPrice() + "\nLejepris" + getRentPrice() + "\nOprindelsesland: " + getCountryOfOrigin() + "\nAntal tøj på dette lager: " + getStorageName() + getStockStore() + "\nProduktNummer: " + getProductNo() + "\nAntal af tøj i alt: " + getStockAmount() + "\nKlaiber: " + getCalibre() + "\nMateriale: " + getMaterial();
 
 }
 
