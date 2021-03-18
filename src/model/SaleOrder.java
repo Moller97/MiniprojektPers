@@ -31,7 +31,7 @@ public class SaleOrder {
 		return invoiceNo;	
 	}
 	
-	public Calendar getDate(){
+	public Date getDate(){
 		return date;
 	}
 	
