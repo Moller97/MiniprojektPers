@@ -1,16 +1,21 @@
 package model;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class SaleOrder {
 
 	private int customerNo;
 	private int invoiceNo;
 	private int iD;
-	private String date;
 	private String deliveryStatus;
 	private String deliveryDate;
 	private ArrayList<Product> products;
+	
+	Calendar c = new GregorianCalendar();
+	Date date = c.getTime();
+	
 	
 	
 	
@@ -22,24 +27,19 @@ public class SaleOrder {
 		return customerNo;
 	}
 	
-	public int setInvoiceNo(){
+	public int getInvoiceNo(){
 		return invoiceNo;	
 	}
 	
-	public void setDate(){
-        int day = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
-        int month = Calendar.getInstance().get(Calendar.MONTH);
-
-        String date = day + "/" + month;
-
-        this.date = date;
+	public Calendar getDate(){
+		return date;
 	}
 	
-	public String setDeliveryStatus(){
+	public String getDeliveryStatus(){
 		return deliveryStatus;
 	}
 	
-	public String setDeliveryDate(){
+	public String getDeliveryDate(){
 		return deliveryDate;
 	}
 	
