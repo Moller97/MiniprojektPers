@@ -64,5 +64,8 @@ public int getPhoneNo() {
 public void setPhoneNo(int phoneNo) {
 	this.phoneNo = phoneNo;
 }
+public String printCustomer() {
+	return "\nKundens navn: " + getName() + "\nKundens addresse: " + getAddress() + "\nKundens postkode: " + getZipCode() + "\nKundens by: " + getCity() + "\nKundens telefonnummer: " + getPhoneNo() + "\nKundens id: " + getCustomerId();
+}
 
 }

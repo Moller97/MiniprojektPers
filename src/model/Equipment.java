@@ -27,7 +27,7 @@ public void setDescription(String description) {
 	this.description = description;
 }
 
-public String printProductClothing() {
+public String printProductEquipment() {
 	return "\nProdukt navn: " + getProductName() + "\nKøbspris " + getPurchasePrice() + "\nSlagspris " + getSalesPrice() + "\nLejepris" + getRentPrice() + "\nOprindelsesland: " + getCountryOfOrigin() + "\nAntal tøj på dette lager: " + getStorageName() + getStockStorage() + "\nProduktNummer: " + getProductNo() + "\nAntal af tøj i alt: " + getStockAmount() + "\nType: " + getType() + "\nBeskrivelse: " + getDescription();
 
 }

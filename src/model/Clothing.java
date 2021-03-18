@@ -23,7 +23,7 @@ public String getColour() {
 	return colour;
 }
 
-public void setcolour(String colour) {
+public void setColour(String colour) {
 	this.colour = colour;
 }
 
