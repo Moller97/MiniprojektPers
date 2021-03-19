@@ -10,9 +10,9 @@ import model.Product;
 
 public class ProductDB implements ProductDBIF {
 	private static final String selectAllQ = 
-			"select purchasePrice, salesPrice, rentPrice, countryOfOrigin, stockAmount, stockStore, stockCar, productNo from groups";
+			"select purchasePrice, salesPrice, rentPrice, countryOfOrigin, stockAmount, stockStore, stockCar, productNo from Product";
 	private static final String selectByIDQ = 
-			selectAllQ + " where id = ?";
+			selectAllQ + " where no = ?";
 	private PreparedStatement selectAll; 
 	private PreparedStatement selectByID;
 	
@@ -36,9 +36,9 @@ public class ProductDB implements ProductDBIF {
 	}
 
 	@Override
-	public Product findByProductNo(int no) throws DataAccessException {
+	public Product findByProductNo(String no) throws DataAccessException {
 		try {
-			selectByID.setInt(1, no);
+			selectByID.setString(1, no);
 			ResultSet rs = selectByID.executeQuery();
 			Product p = null;
 			if(rs.next()) {
@@ -46,7 +46,7 @@ public class ProductDB implements ProductDBIF {
 			}
 			return p;
 		} catch (SQLException e) {
-			throw new DataAccessException(e, "Could not find by id = " + no);
+			throw new DataAccessException(e, "Could not find by ProductNo = " + no);
 		}
 	}
 
@@ -59,7 +59,7 @@ public class ProductDB implements ProductDBIF {
 				rs.getString("countryOfOrigin"),
 				rs.getInt("stockCar"),
 				rs.getInt("stockStore"),
-				rs.getInt("productNo"),
+				rs.getString("productNo"),
 				rs.getInt("StockAmount"),
 				rs.getString("storageName")
 				

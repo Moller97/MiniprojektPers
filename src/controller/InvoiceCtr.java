@@ -25,7 +25,7 @@ public class InvoiceCtr implements InvoiceCtrIF {
 	}
 	
 	@Override
-	public Invoice findByProductNo(int no) throws DataAccessException {
+	public Invoice findByInvoiceNo(int no) throws DataAccessException {
 		return InvoiceDB.findByInvoiceNo(no);
 	}
 

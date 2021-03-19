@@ -9,6 +9,6 @@ public interface InvoiceCtrIF {
 
 	List<Invoice> findAll() throws DataAccessException;
 
-	Invoice findByProductNo(int no) throws DataAccessException;
+	Invoice findByInvoiceNo(int no) throws DataAccessException;
 
 }
