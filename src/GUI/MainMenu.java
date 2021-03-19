@@ -4,6 +4,8 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 
+import db.DataAccessException;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -48,7 +50,13 @@ public class MainMenu {
 		JButton Product = new JButton("ProduktMenu");
 		Product.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ProductMenu productMenu = new ProductMenu();
+				ProductMenu productMenu = null;
+				try {
+					productMenu = new ProductMenu();
+				} catch (DataAccessException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			    productMenu.frame.setVisible(true);
 			    Mainmenu.dispose();
 			}
@@ -61,7 +69,7 @@ public class MainMenu {
 		Order.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				OrderMenu orderMenu = new OrderMenu();
-				orderMenu.frame.setVisible(true);
+				orderMenu.frame1.setVisible(true);
 				Mainmenu.dispose();
 			}
 		});
@@ -73,7 +81,7 @@ public class MainMenu {
 		Customer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CustomerMenu customerMenu = new CustomerMenu();
-				customerMenu.frame.setVisible(true);
+				customerMenu.frame2.setVisible(true);
 				Mainmenu.dispose();
 			}
 		});
@@ -84,7 +92,7 @@ public class MainMenu {
 		BTSupplierMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				SupplierMenu suppliermenu = new SupplierMenu();
-				suppliermenu.frame.setVisible(true);
+				suppliermenu.frame3.setVisible(true);
 				Mainmenu.dispose();
 			}
 		});

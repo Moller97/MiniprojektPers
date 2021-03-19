@@ -9,6 +9,6 @@ public interface ProductCtrIF {
 
 	List<Product> findAll() throws DataAccessException;
 
-	Product findByProductNo(int no) throws DataAccessException;
+	Product findByProductNo(String no) throws DataAccessException;
 
 }

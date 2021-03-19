@@ -8,11 +8,11 @@ private int rentPrice;
 private String countryOfOrigin;
 private int stockCar;
 private int stockStore;
-private int productNo;
+private String productNo;
 private int stockAmount;
 private String storageName;  
 
-public Product(String productName, int purchasePrice, int salesPrice, int rentPrice, String countryOfOrigin, int stockCar, int stockStore, int productNo, int stockAmount, String storageName) {
+public Product(String productName, int purchasePrice, int salesPrice, int rentPrice, String countryOfOrigin, int stockCar, int stockStore, String productNo, int stockAmount, String storageName) {
 this.productName = productName;
 this.purchasePrice = purchasePrice;
 this.rentPrice = rentPrice;
@@ -82,11 +82,11 @@ public void setStockStore(int stockStore) {
 	this.stockStore = stockStore;
 }
 
-public int getProductNo() {
+public String getProductNo() {
 	return productNo;
 }
 
-public void setProductNo(int productNo) {
+public void setProductNo(String productNo) {
 	this.productNo = productNo;
 }
 
