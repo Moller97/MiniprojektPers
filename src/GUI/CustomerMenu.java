@@ -4,9 +4,9 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 
-public class CustomerMenu {
+public class CustomerMenu extends JFrame {
 
-	private JFrame frame;
+     JFrame frame2;
 
 	/**
 	 * Launch the application.
@@ -16,7 +16,7 @@ public class CustomerMenu {
 			public void run() {
 				try {
 					CustomerMenu window = new CustomerMenu();
-					window.frame.setVisible(true);
+					window.frame2.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -35,9 +35,10 @@ public class CustomerMenu {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame2 = new JFrame();
+		frame2.setTitle("KundeMenu");
+		frame2.setBounds(100, 100, 630, 410);
+		frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
 }

@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 
 public class SupplierMenu {
 
-	private JFrame frame;
+	JFrame frame3;
 
 	/**
 	 * Launch the application.
@@ -16,7 +16,7 @@ public class SupplierMenu {
 			public void run() {
 				try {
 					SupplierMenu window = new SupplierMenu();
-					window.frame.setVisible(true);
+					window.frame3.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -35,9 +35,11 @@ public class SupplierMenu {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame3 = new JFrame();
+		frame3.setTitle("Leverand\u00F8rMenu");
+		frame3.setBounds(100, 100, 656, 429);
+		frame3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame3.getContentPane().setLayout(null);
 	}
 
 }
