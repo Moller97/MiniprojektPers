@@ -4,9 +4,13 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
 public class MainMenu {
 
-	private JFrame frame;
+	private JFrame Mainmenu;
 
 	/**
 	 * Launch the application.
@@ -16,7 +20,7 @@ public class MainMenu {
 			public void run() {
 				try {
 					MainMenu window = new MainMenu();
-					window.frame.setVisible(true);
+					window.Mainmenu.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -35,9 +39,57 @@ public class MainMenu {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
+		Mainmenu = new JFrame();
+		Mainmenu.setTitle("HovedMenu");
+		Mainmenu.setBounds(100, 100, 750, 489);
+		Mainmenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Mainmenu.getContentPane().setLayout(null);
+		
+		JButton Product = new JButton("ProduktMenu");
+		Product.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ProductMenu productMenu = new ProductMenu();
+			    productMenu.frame.setVisible(true);
+			    Mainmenu.dispose();
+			}
+		});
+		Product.setBounds(227, 168, 134, 23);
+		Mainmenu.getContentPane().add(Product);
+		
+		
+		JButton Order = new JButton("OrdreMenu");
+		Order.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				OrderMenu orderMenu = new OrderMenu();
+				orderMenu.frame.setVisible(true);
+				Mainmenu.dispose();
+			}
+		});
+		Order.setBounds(371, 168, 134, 23);
+		Mainmenu.getContentPane().add(Order);
+		
+		
+		JButton Customer = new JButton("KundeMenu");
+		Customer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CustomerMenu customerMenu = new CustomerMenu();
+				customerMenu.frame.setVisible(true);
+				Mainmenu.dispose();
+			}
+		});
+		Customer.setBounds(227, 202, 134, 23);
+		Mainmenu.getContentPane().add(Customer);
+		
+		JButton BTSupplierMenu = new JButton("Leverand\u00F8rMenu");
+		BTSupplierMenu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				SupplierMenu suppliermenu = new SupplierMenu();
+				suppliermenu.frame.setVisible(true);
+				Mainmenu.dispose();
+			}
+		});
+		BTSupplierMenu.setBounds(371, 202, 134, 23);
+		Mainmenu.getContentPane().add(BTSupplierMenu);
 
+}
 }

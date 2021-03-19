@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 
 public class SupplierMenu {
 
-	private JFrame frame;
+	JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -36,8 +36,10 @@ public class SupplierMenu {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setTitle("Leverand\u00F8rMenu");
+		frame.setBounds(100, 100, 656, 429);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
 	}
 
 }

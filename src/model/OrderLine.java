@@ -19,7 +19,7 @@ public class OrderLine {
 		return p;
 	}
 
-	public int getCount() {
+	public int getAmount() {
 		return amount;
 	}
 	public String getproductNo() {
